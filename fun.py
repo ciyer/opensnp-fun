@@ -24,12 +24,12 @@ def subsample():
     parsed = parse23andme.ParseToDict(subset)
     return parsed
 
-
-# Get some data for working with
-data_set = subsample()
-# Group all the snps by chromosome and sort by location
-chromosomes = data_utilities.sorted_snps_by_chromosome(data_set)
-# Delink the snps on the chromosome so we can feed it into PCA
-delinked_chromosomes = dict((k, data_utilities.discard_correlated_snps(v)) for k, v in chromosomes.items())
+def delink_chromosomes():
+    # Get some data for working with
+    data_set = subsample()
+    # Group all the snps by chromosome and sort by location
+    chromosomes = data_utilities.sorted_snps_by_chromosome(data_set)
+    # Delink the snps on the chromosome so we can feed it into PCA
+    delinked_chromosomes = dict((k, data_utilities.discard_correlated_snps(v)) for k, v in chromosomes.items())
 
 
