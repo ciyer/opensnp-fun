@@ -52,6 +52,8 @@ def pair_histogram(genotype_a, genotype_b):
 
 def are_correlated(genotype_a, genotype_b):
     """Return two if two loci are correlated"""
+
+    # TODO This logic is not correct, but a start. Please properly implement correlation.
     hist = pair_histogram(genotype_a, genotype_b)
     total = len(genotype_a)
     # if the most common pair value appears more than 80% of time, then they are correlated
