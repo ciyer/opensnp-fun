@@ -1,2 +1,4 @@
 .idea
 *.pyc
+*.swp
+plink_merge_list.txt
